@@ -5,8 +5,9 @@ namespace UnitTestProject2
 {
     [TestClass]
     public class UnitTest1
-    {
-        [TestMethod]
+	{
+		public string duplicateString = "Duplicate";
+		[TestMethod]
         public void TestMethod1()
         {
 			Class1 helloWorld = new Class1("World");

@@ -3,7 +3,9 @@
 namespace SharedProject1
 {
     class Class1
-    {
+	{
+		public string duplicateString = "String";
+		public string dupStr = "Duplicate";
 		public string Name;
 
         public Class1(string newName)
@@ -13,12 +15,14 @@ namespace SharedProject1
 		
 		public string Hello(string name)
 		{
-			return "Hello " + name;
+			string newName = name;
+			return "Hello " + newName;
 		}
 
 		public string Hello()
 		{
-			return "Hello " + Name;
+			string newName = Name;
+			return "Hello " + newName;
 		}
 	}
 }
