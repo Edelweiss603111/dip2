@@ -1,0 +1,22 @@
+@import "../../../styles/mixins";
+
+.breadcrumb {
+  @include offSelection;
+  list-style-type: none;
+
+  li {
+    display: inline;
+  }
+
+  .slash {
+    margin: 0 10px 0 10px;
+  }
+
+  .home-icon {
+    margin-right: 10px;
+  }
+
+  .last-route {
+    font-weight: 600;
+  }
+}

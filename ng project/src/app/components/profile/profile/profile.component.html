@@ -1,0 +1,237 @@
+<lime-page-header title="Profile"></lime-page-header>
+
+<div id="profile">
+  <div id="photo-block">
+    <div id="photo" #photo  >
+      <img [src]='_src' alt="">
+    </div>
+    <!--<div id="photo-loader">loader</div>-->
+  </div>
+  <div id="name">
+    <h2>{{ 'About me' | translate: lang }}</h2>
+
+    <form class="form" name="aboutMeForm" (ngSubmit)="updateUserData(f1)" #f1="ngForm">
+
+      <dx-form id="about-me-form"
+               [colCount]=1
+               [(formData)]="_userData"
+               validationGroup="AboutMeForm">
+        <dxi-item dataField="name"
+                  editorType="dxTextBox"
+                  [editorOptions]="{ width: '100%',
+                            placeholder: 'Name' | translate: lang }">
+          <dxo-label text="{{ 'Name' | translate: lang }}"></dxo-label>
+          <dxi-validation-rule
+            type="stringLength"
+            [max]="50"
+            message="{{ 'The length of the name must be less than 50 characters' | translate: lang }}">
+          </dxi-validation-rule>
+          <dxi-validation-rule type="required"
+                               message="{{ 'Field is required' | translate: lang }}"></dxi-validation-rule>
+        </dxi-item>
+
+
+        <dxi-item dataField="surname"
+                  editorType="dxTextBox"
+                  [editorOptions]="{ width: '100%',
+                            placeholder: 'Surname' | translate: lang }">
+          <dxo-label text="{{ 'Surname' | translate: lang }}"></dxo-label>
+          <dxi-validation-rule
+            type="stringLength"
+            [max]="50"
+            message="{{ 'The length of the surname must be less than 50 characters' | translate: lang }}">
+          </dxi-validation-rule>
+          <dxi-validation-rule type="required"
+                               message="{{ 'Field is required' | translate: lang }}"></dxi-validation-rule>
+        </dxi-item>
+
+        <dxi-item dataField="patronomic"
+                  editorType="dxTextBox"
+                  [editorOptions]="{ width: '100%',
+                            placeholder: 'Patronymic' | translate: lang }">
+          <dxo-label text="{{ 'Patronymic' | translate: lang }}"></dxo-label>
+          <dxi-validation-rule
+            type="stringLength"
+            [max]="50"
+            message="{{ 'The length of the patronymic must be less than 50 characters' | translate: lang }}">
+          </dxi-validation-rule>
+          <dxi-validation-rule type="required"
+                               message="{{ 'Field is required' | translate: lang }}"></dxi-validation-rule>
+        </dxi-item>
+
+        <dxi-item dataField="displayName"
+                  editorType="dxTextBox"
+                  [editorOptions]="{ width: '100%',
+                            placeholder: 'Display name' | translate: lang }">
+          <dxo-label text="{{ 'Display name' | translate: lang }}"></dxo-label>
+          <dxi-validation-rule
+            type="stringLength"
+            [max]="250"
+            message="{{ 'The length of the display name must be less than 250 characters' | translate: lang }}">
+          </dxi-validation-rule>
+          <dxi-validation-rule type="required"
+                               message="{{ 'Field is required' | translate: lang }}"></dxi-validation-rule>
+        </dxi-item>
+      </dx-form>
+
+      <div class="btn">
+        <dx-button
+          text="{{ 'Save' | translate:lang }}"
+          type="Normal"
+          validationGroup="AboutMeForm"
+          [useSubmitBehavior]="true">
+        </dx-button>
+      </div>
+
+    </form>
+  </div>
+
+  <div id="contacts">
+    <h2>{{ 'Contacts' | translate: lang }}</h2>
+    <div id="contacts-content">
+      <div id="form">
+        <form class="form" name="contactsForm" (ngSubmit)="setPhone(f2)" #f2="ngForm">
+          <dx-form id="phone-form"
+                   class="dx-form"
+                   [colCount]=1
+                   [(formData)]="_userData"
+                   validationGroup="ContactsForm">
+
+            <dxi-item dataField="phoneNumber"
+                      editorType="dxTextBox"
+
+                      [editorOptions]="{ width: '100%',
+                      mask: '+9 (999) 999-99-99',
+                            maskInvalidMessage: 'Invalid phone number' | translate: lang ,
+                            placeholder: 'Phone number' | translate: lang }">
+              <dxo-label text="{{ 'Phone number' | translate: lang }}"></dxo-label>
+            </dxi-item>
+
+            <dxi-item dataField="email"
+                      editorType="dxTextBox"
+                      [editorOptions]="{ width: '100%',
+                            placeholder: 'Email' | translate: lang }" email>
+              <dxo-label text="{{ 'Email' | translate: lang }}"></dxo-label>
+              <dxi-validation-rule
+                type="stringLength"
+                [max]="50"
+                message="{{ 'The length of the email must be less than 256 characters' | translate: lang }}">
+              </dxi-validation-rule>
+              <dxi-validation-rule
+                type="email"
+                message="{{ 'Invalid email' | translate: lang }}">
+              </dxi-validation-rule>
+              <dxi-validation-rule type="required"
+                                   message="{{ 'Email is required' | translate: lang }}"></dxi-validation-rule>
+            </dxi-item>
+
+          </dx-form>
+        </form>
+      </div>
+
+
+      <div class="btn save-btn" id="phone-save-btn">
+        <dx-button
+          text="{{ 'Save' | translate:lang }}"
+          type="Normal"
+          validationGroup="ContactsForm"
+          (onClick)="setPhone()">
+        </dx-button>
+      </div>
+
+      <!--<div class="btn confirmation" id="phone-confirmation">-->
+        <!--<dx-button-->
+          <!--text="{{ 'Confirm' | translate:lang }}"-->
+          <!--type="Normal"-->
+          <!--validationGroup="ContactsForm"-->
+          <!--*ngIf="_userData && !_userData.phoneNumberConfirmed">-->
+        <!--</dx-button>-->
+        <!--<div id="phone-confirmation-label" *ngIf="_userData && _userData.phoneNumberConfirmed">-->
+          <!--<i class="fa fa-check" aria-hidden="true"></i><span class="text">{{ 'Confirmed' | translate: lang }}</span>-->
+        <!--</div>-->
+      <!--</div>-->
+
+
+      <div class="btn save-btn" id="email-save-btn">
+        <dx-button
+          text="{{ 'Save' | translate:lang }}"
+          type="Normal"
+          validationGroup="ContactsForm"
+          (onClick)="setEmail()">
+        </dx-button>
+      </div>
+
+      <div class="btn confirmation" id="email-confirmation">
+        <dx-button
+          text="{{ 'Confirm' | translate:lang }}"
+          type="Normal"
+          validationGroup="ContactsForm"
+          *ngIf="_userData && !_userData.emailConfirmed"
+          (onClick)="confirmEmail()"
+        >
+        </dx-button>
+        <div id="email-confirmation-label" *ngIf="_userData && _userData.emailConfirmed">
+          <i class="fa fa-check" aria-hidden="true"></i><span class="text">{{ 'Confirmed' | translate: lang }}</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div id="password">
+      <form class="form" name="passwordForm" (ngSubmit)="changePassword(f4)" #f4="ngForm">
+        <h2>{{ 'Password management' | translate: lang }}</h2>
+
+        <dx-form id="password-form"
+                 [colCount]=1
+                 [(formData)]="_userPwd"
+                 validationGroup="PasswordForm">
+
+          <dxi-item dataField="oldPassword"
+                    editorType="dxTextBox"
+                    [editorOptions]="{ width: '100%', mode: 'password',
+                            placeholder: 'Old password' | translate: lang }">
+            <dxo-label text="{{ 'Old password' | translate: lang }}"></dxo-label>
+            <dxi-validation-rule type="required"
+                                 message="{{ 'Old password is required' | translate: lang }}"></dxi-validation-rule>
+          </dxi-item>
+
+          <dxi-item dataField="newPassword"
+                    editorType="dxTextBox"
+                    [editorOptions]="{ width: '100%', mode: 'password',
+                            placeholder: 'New password' | translate: lang }">
+            <dxo-label text="{{ 'New password' | translate: lang }}"></dxo-label>
+            <dxi-validation-rule
+              type="stringLength"
+              min="{{_minPwdLength}}"
+              message="{{ 'The password must be longer than' | translate: lang }} {{ _minPwdLength }} {{'characters' | translate: lang }}">
+            </dxi-validation-rule>
+            <dxi-validation-rule type="required"
+                                 message="{{ 'New password is required' | translate: lang }}"></dxi-validation-rule>
+          </dxi-item>
+
+          <dxi-item dataField="confirmPassword"
+                    editorType="dxTextBox"
+                    [editorOptions]="{ width: '100%', mode: 'password',
+                            placeholder: 'Confirm password' | translate: lang }">
+            <dxo-label text="{{ 'Confirm password' | translate: lang }}"></dxo-label>
+            <dxi-validation-rule type="required"
+                                 message="{{ 'Confirm password is required' | translate: lang }}"></dxi-validation-rule>
+            <dxi-validation-rule type="compare" [comparisonTarget]="passwordComparison"
+                                 message="{{ 'New password and confirm password do not match' | translate: lang }}"></dxi-validation-rule>
+          </dxi-item>
+
+
+        </dx-form>
+
+        <div class="btn">
+          <dx-button
+            text="{{ 'Save' | translate:lang }}"
+            type="Normal"
+            validationGroup="PasswordForm"
+            [useSubmitBehavior]="true"
+          >
+          </dx-button>
+        </div>
+      </form>
+    </div>
+  </div>

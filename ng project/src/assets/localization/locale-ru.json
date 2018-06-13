@@ -1,0 +1,112 @@
+{
+  "You are not have any installation": "Вы не состоите ни в одной инсталляции",
+  "Cancel": "Отмена",
+  "Choose the installation": "Выберите инсталляцию",
+  "Search": "Поиск",
+
+  "Authorization": "Авторизация",
+  "Username": "Логин",
+  "Password": "Пароль",
+  "Remember me": "Запомнить меня",
+  "Log in": "Войти в систему",
+  "Login is required": "Логин обязателен для заполнения",
+  "Password is required": "Пароль обязателен для заполнения",
+
+  "«Lime-IT» LLC": "ООО «Лайм-Айти»",
+  "Language": "Язык",
+
+  "Hello": "Привет",
+  "Log out": "Выход",
+
+  "My installations": "Мои инсталляции",
+  "Installation settings": "Параметры инсталляции",
+  "Creating of the installation": "Создание инсталляции",
+  "Page not found": "Страница не найдена",
+  "Lime": "Лайм",
+  "Installations": "Инсталляции",
+
+  "Profile": "Профиль",
+  "About me": "О себе",
+  "Contacts": "Контакты",
+  "Password management": "Управление паролем",
+
+  "My objects": "Мои объекты",
+
+  "Loading": "Загрузка",
+
+  "Name":"Имя",
+  "Surname": "Фамилия",
+  "Patronymic": "Отчество",
+  "Display name": "Отображаемое имя",
+  "Phone number": "Номер телефона",
+  "Old password": "Старый пароль",
+  "New password": "Новый пароль",
+  "Confirm password": "Подтвердите пароль",
+  "Old password is required": "Старый пароль обязателен для ввода",
+  "New password is required": "Новый пароль обязателен для ввода",
+  "Confirm password is required": "Подтверждение пароля обязательно",
+  "New password and confirm password do not match": "Пароли не совпадают",
+
+  "The password must be longer than": "Длина пароля должна быть больше",
+  "characters": "симв.",
+  "Confirm": "Подтвердить",
+  "Confirmed": "Подтверждено",
+
+  "Total records": "Всего записей",
+
+  "The length of the name must be less than 50 characters": "Длина имени должна быть меньше 50 символов",
+  "The length of the surname must be less than 50 characters": "Длина фамилии должна быть меньше 50 символов",
+  "The length of the patronymic must be less than 50 characters": "Длина отчества должна быть меньше 50 символов",
+  "Field is required": "Поле обязательно для заполнения",
+  "Save": "Сохранить",
+  "Invalid phone number":"Некорректный номер телефона",
+  "Email": "Email",
+  "Email is required": "Email обязателен для заполнения",
+  "Invalid email": "Некорректный email",
+  "The length of the email must be less than 256 characters": "Длина email должна быть меньше 256 символов",
+
+  "Data successfully updated": "Данные успешно обновлены",
+  "Successful": "Операция завершена успешно",
+  "Error": "Ошибка",
+  "Details": "Детали",
+  "A verification link has been sent to your email account":"На указанный адрес было выслано письмо для подтверждения email",
+
+
+
+
+
+  "Grid summary text": "Всего: {0} записей",
+  "Title": "Название",
+  "Description": "Описание",
+  "Inn": "ИНН",
+  "Main Organization": "Основная организация",
+  "Refresh": "Обновление",
+  "Create": "Создать",
+  "Create text": "Создание новой точки обслуживания",
+  "Edit": "Редактировать",
+  "Edit text": "Редактирование выбранной точки обслуживания. Позволяет изменить тип точки обслуживания и сопутствующие ему параметры",
+  "Delete": "Удалить",
+  "Delete text": "Удаление услуги. Операция необратима!",
+  "Popup delete text": "Удалить запись?",
+  "My organizations": "Мои организации",
+  "Organization settings": "Параметры организации",
+
+  "Save text": "Сохранить внесенные изменения и вернуться к списку организаций",
+  "Cancel text": "Отменить изменения и вернуться к списку организаций",
+  "Title text": "Название организации. Обязательное поле.",
+  "Description text": "Описание организации.",
+  "Inn text": "ИНН организации.",
+  "Main Organization text": "Отображает, является ли организация главной.",
+
+  "Organizations": "Организации",
+  "You are not yet in any installation. A great opportunity to create your own :)": "Вы пока еще не состоите ни в одной инсталляции. Прекрасный повод создать собственную :)",
+  "New installation": "Новая инсталляция",
+
+  "Previous": "Назад",
+  "Next": "Вперед",
+  "First": "В начало",
+  "Last": "В конец"
+
+
+
+}

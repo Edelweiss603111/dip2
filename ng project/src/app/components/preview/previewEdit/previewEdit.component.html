@@ -1,0 +1,101 @@
+<dx-form id="form"
+        [colCount]=1
+        [formData]="formDataSource"
+        validationGroup="customerData">
+    <dxi-item dataField="name">
+        <dxo-label text="{{ 'Title' | translate: lang }}"></dxo-label>
+        <dxi-validation-rule
+            type="stringLength"
+            [min]="2"
+            [max]="50"
+            message="{{ 'Monday' | translate: lang }}">
+        </dxi-validation-rule>
+        <dxi-validation-rule type="required"></dxi-validation-rule>
+    </dxi-item>
+    <!--<dxi-item dataField="Kind"
+            editorType="dxLookup"
+            [editorOptions]="{ width: '100%',
+                        showPopupTitle: false,
+                        dataSource: kindsList,
+                        closeOnOutsideClick: true,
+                        placeholder: 'Kind' | translate: lang }">
+        <dxo-label text="{{ 'Kind' | translate: lang }}"></dxo-label>
+        <dxi-validation-rule type="required" message="Position is required"></dxi-validation-rule>
+    </dxi-item>
+    <dxi-item dataField="Type"
+            editorType="dxSelectBox"
+            [editorOptions]="{ width: '100%',
+                        items: typesList,
+                        placeholder: 'Controller type' | translate: lang }">
+        <dxo-label text="{{ 'Controller type' | translate: lang }}"></dxo-label>
+        <dxi-validation-rule type="required" message="Position is required"></dxi-validation-rule>
+    </dxi-item>-->
+    <dxi-item dataField="description">
+        <dxo-label text="{{ 'Description' | translate: lang }}"></dxo-label>
+    </dxi-item>
+    <dxi-item dataField="inn">
+        <dxo-label text="{{ 'Inn' | translate: lang }}"></dxo-label>
+    </dxi-item>
+    <dxi-item>
+        <dx-check-box class="check-box" [(value)]="formDataSource.isMainOrganization"></dx-check-box>
+        <dxo-label text="{{ 'Main Organization' | translate: lang }}"></dxo-label>
+    </dxi-item>
+</dx-form>
+<div class="btn-block">
+    <div class="btn-panel save-panel">
+        <dx-button
+            icon="check"
+            text="{{ 'Save' | translate: lang }}"
+            validationGroup="customerData"
+            (onClick)="entitiesEditorOk(formDataSource)"
+            [useSubmitBehavior]="true">
+        </dx-button>
+        <div class="btn-text btn-text-save">{{ 'Save text' | translate: lang }}</div>
+    </div>
+    <div class="btn-panel cancel-panel">
+        <dx-button
+            icon="clear"
+            text="{{ 'Cancel' | translate: lang }}"
+            validationGroup="customerData"
+            (onClick)="entitiesEditorCancel()"
+            [useSubmitBehavior]="false">
+        </dx-button>
+        <div class="btn-text btn-text-cancel">{{ 'Cancel text' | translate: lang }}</div>
+    </div>
+</div>
+<hr>
+<div class="description-block">
+    <div class="field">
+        <div class="description-name">
+            {{ "Title" | translate: lang }}
+        </div>
+        <div class="description-text">
+            {{ "Title text" | translate: lang }}
+        </div>
+    </div>
+    <div class="field">
+        <div class="description-name">
+            {{ "Description" | translate: lang }}
+        </div>
+        <div class="description-text">
+            {{ "Description text" | translate: lang }}
+        </div>
+    </div>
+    <div class="field">
+        <div class="description-name">
+            {{ "Inn" | translate: lang }}
+        </div>
+        <div class="description-text">
+            {{ "Inn text" | translate: lang }}
+        </div>
+    </div>
+    <div class="field">
+        <div class="description-name">
+            {{ "Main Organization" | translate: lang }}
+        </div>
+        <div class="description-text">
+            {{ "Main Organization text" | translate: lang }}
+        </div>
+    </div>
+</div>
+    

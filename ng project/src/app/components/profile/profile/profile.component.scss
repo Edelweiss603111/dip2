@@ -1,0 +1,116 @@
+@import "../../../styles/mixins";
+@import "../../../styles/_vars";
+
+div {
+  //border: 1px solid green;
+}
+
+.btn {
+  margin-top: $gutter;
+
+  dx-button {
+    min-width: 118px;
+  }
+}
+
+#profile {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-template-rows: auto auto auto;
+  grid-template-areas: "photo name" "contacts contacts" "password password";
+  grid-gap: 10px;
+
+  #photo-block {
+    grid-area: photo;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    #photo {
+      min-width: 150px;
+      max-width: 200px;
+      width: 85%;
+      max-height: 200px;
+      height: auto;
+
+      //margin-bottom: $gutter;
+      //margin-top: $gutter;
+      margin: auto;
+
+      align-self: center;
+
+      & > img {
+        width: 100%;
+        height: auto;
+
+        border-radius: 5%;
+      }
+    }
+
+  }
+
+  #name {
+    grid-area: name;
+  }
+
+  #contacts {
+    grid-area: contacts;
+
+    #contacts-content {
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+      grid-template-columns: auto 120px 140px;
+      grid-template-areas: "form phone-save-btn phone-confirm-btn" "form email-save-btn email-confirm-btn";
+      grid-gap: 10px;
+      align-items: center;
+
+      .save-btn {
+        text-align: center
+      }
+
+      .btn {
+        margin-top: 0;
+
+        dx-button {
+          width: 100%;
+        }
+      }
+      #form {
+        grid-area: form;
+      }
+
+      #phone-save-btn {
+        grid-area: phone-save-btn;
+      }
+
+      #phone-confirmation, #phone-confirmation-label {
+        grid-area: phone-confirm-btn;
+      }
+
+      #email-save-btn {
+        grid-area: email-save-btn;
+      }
+
+      #email-confirmation, #email-confirmation-label {
+        grid-area: email-confirm-btn;
+      }
+
+      #email-confirmation-label, #phone-confirmation-label {
+        color: $accent-color;
+
+        i {
+          margin-right: 5px;
+        }
+
+        .text {
+          font-size: $base-font-size;
+        }
+      }
+
+    }
+  }
+
+  #password {
+    grid-area: password;
+  }
+}

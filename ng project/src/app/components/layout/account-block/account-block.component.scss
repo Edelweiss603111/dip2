@@ -1,0 +1,156 @@
+@import "../../../styles/vars";
+@import "../../../styles/mixins";
+
+i {
+  display: inline-block;
+}
+
+.account-block {
+  @include offSelection();
+  height: 100%;
+  width: 100%;
+
+  display: grid;
+  grid-template-columns: auto 55px;
+  grid-template-areas: "greeting photo";
+
+  align-items: end;
+
+  #menu {
+    //@include transition
+    background-color: $base-content-background-color;
+    border: 1px solid $light-border-color;
+    min-width: 140px;
+    z-index: 10000;
+
+    visibility: hidden;
+    display: none;
+
+    ul {
+      list-style-type: none;
+
+      li {
+        @include transition2(0.3);
+        padding: 5px 15px 5px 10px;
+        display: flex;
+        justify-content: flex-start;
+
+        &:last-of-type {
+          padding-bottom: 7px;
+        }
+
+        &:first-of-type {
+          padding-top: 7px;
+
+          &:hover::before {
+            background-color: $base-background-color;
+            cursor: pointer;
+          }
+
+          &:before {
+            content: '';
+            vertical-align: middle;
+            margin: auto;
+            position: absolute;
+            left: 60%;
+            right: 0;
+            top: -9px;
+            width: 15px;
+            height: 15px;
+            background: #fff;
+            border-top: 1px solid $light-border-color;
+            border-right: 1px solid $light-border-color;
+            transform: rotate(-45deg);
+            -moz-transform: rotate(-45deg);
+            -webkit-transform: rotate(-45deg);
+          }
+        }
+
+        &:hover {
+          background-color: $base-background-color;
+          cursor: pointer;
+        }
+
+        i {
+          margin-right: 15px;
+          color: $accent-color;
+        }
+
+        & > span {
+          text-align: left;
+        }
+
+        .icon {
+          margin-right: 10px;
+          width: 26px;
+          text-align: center;
+
+          & > i {
+            margin: auto;
+          }
+        }
+      }
+    }
+  }
+
+  .greeting {
+    //text-align: end;
+    text-align: right;
+    padding-right: 10px;
+    padding-bottom: 5px;
+    line-height: 1.5;
+    display: block;
+
+  }
+  #name {
+    grid-area: greeting;
+    font-weight: 500;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .photo {
+    width: 55px;
+    height: 55px;
+    grid-area: photo;
+    align-self: center;
+    background: url("../../../../assets/i/photo.png") center no-repeat;
+    background-size: 100% 100%;
+    @include border-radius(8px);
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  //.logout {
+  //  grid-area: logout;
+  //  //text-align: end;
+  //  text-align: right;
+  //  padding-right: 10px;
+  //  padding-bottom: 5px;
+  //  align-self: center;
+  //  display: block;
+  //}
+
+  .logout > span:hover {
+    cursor: pointer;
+    text-decoration: underline;
+  }
+}
+
+@media (max-width: 640px) {
+  .account-block {
+    grid-template-columns: 0 55px;
+
+    .greeting {
+      display: none;
+    }
+    .photo {
+      width: 50px;
+      height: 50px;
+    }
+  }
+}

@@ -1,0 +1,15 @@
+<ol class="breadcrumb">
+  <li *ngFor='let breadcrumb of breadcrumbs; let last = last; let first = first'>
+    <span class="home-icon" *ngIf="first">
+        <i class="fa fa-home" aria-hidden="true"></i>
+    </span>
+    <ng-container *ngIf="!last">
+      <a [routerLink]="[breadcrumb.routerLink]">{{ breadcrumb.label | translate: lang }}</a>
+      <span class="slash">/</span>
+    </ng-container>
+    <ng-container *ngIf="last">
+      <span class="last-route">{{ breadcrumb.label | translate: lang }}</span>
+    </ng-container>
+
+  </li>
+</ol>

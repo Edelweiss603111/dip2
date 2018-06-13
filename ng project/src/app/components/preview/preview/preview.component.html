@@ -1,0 +1,129 @@
+<dx-data-grid #grid
+        id="gridContainer"
+        keyExpr="id"
+        [dataSource]="gridDataSource"
+        [allowColumnResizing]="true"
+        [hoverStateEnabled]="true"
+        [selectedRowKeys]="[]"
+        [showColumnLines]="false"
+        [showRowLines]="false"
+        [columnAutoWidth]="true"
+        [showBorders]="true"
+        [columnHidingEnabled]="true"
+        [rowAlternationEnabled]="true"
+        (onSelectionChanged)="onSelectionChanged($event)"
+        (onOptionChanged)="onOptionChanged($event)">
+    <dxo-selection mode="single"></dxo-selection>
+    <dxo-paging [pageSize]="5"></dxo-paging>
+    <dxo-search-panel [visible]="true" [width]="240" id="searchPanel" (onChanges)="console.log(123)"></dxo-search-panel>
+    <dxo-summary>
+        <dxi-total-item
+            column="Title"
+            summaryType="count"
+            displayFormat="{{ 'Grid summary text' | translate: lang }}">
+        </dxi-total-item>
+    </dxo-summary>
+    <dxo-pager 
+        [allowedPageSizes]="[5, 10, 15]"
+        [showPageSizeSelector]="true"
+        [showNavigationButtons]="true"></dxo-pager>
+
+
+    <dxi-column
+        dataField="name"
+        caption="{{ 'Name' | translate: lang }}"
+        headerCellTemplate="headerTemplate">
+    </dxi-column>
+    <dxi-column
+        dataField="description"
+        caption="{{ 'Description' | translate: lang }}">
+    </dxi-column>
+    <dxi-column
+        dataField="inn"
+        caption="{{ 'Inn' | translate: lang }}">
+    </dxi-column>
+    <dxi-column
+        caption="{{ 'Main Organization' | translate: lang }}"
+        [hidingPriority]="2"
+        cellTemplate="listItemAutorize">
+    </dxi-column>
+
+    <div *dxTemplate="let columnHeader of 'headerTemplate'">
+        <p>{{ columnHeader.column.caption }}</p>
+    </div>
+    <div class="checkboxAlign" *dxTemplate="let itemData of 'listItemAutorize'">
+        <dx-check-box [disabled]="true"
+            [value]="itemData.data.isMainOrganization"></dx-check-box>
+    </div>
+</dx-data-grid>
+<div class="btn-block">
+    <div class="btn-panel refresh-panel">
+        <dx-button
+            icon="refresh"
+            validationGroup="customerData"
+            [disabled]="false"
+            (onClick)="entitiesRequest()">
+        </dx-button>
+        <div class="btn-text btn-text-create">{{ 'Refresh' | translate: lang }}</div>
+    </div>
+    <div class="btn-panel add-panel">
+        <dx-button
+            icon="add"
+            text="{{ 'Create' | translate: lang }}"
+            validationGroup="customerData"
+            [disabled]="false"
+            (onClick)="entitiesAddNew()">
+        </dx-button>
+        <div class="btn-text btn-text-create">{{ 'Create text' | translate: lang }}</div>
+    </div>
+    <div class="btn-panel edit-panel">
+        <dx-button
+            icon="edit"
+            text="{{ 'Edit' | translate: lang }}"
+            [disabled]="!entitiesCanEdit()"
+            validationGroup="customerData"
+            (onClick)="editCurrentEntity($event)">
+        </dx-button>
+        <div class="btn-text btn-text-edit">{{ 'Edit text' | translate: lang }}</div>
+    </div>
+    <div class="btn-panel delete-panel">
+        <dx-button
+            icon="trash"
+            text="{{ 'Delete' | translate: lang }}"
+            [disabled]="!entitiesCanDelete()"
+            validationGroup="customerData"
+            (onClick)="entitiesDeleteConfirm('dfhdfgdfg', 'fa fa-trash')">
+        </dx-button>
+        <div class="btn-text btn-text-delete">{{ 'Delete text' | translate: lang }}</div>
+    </div>
+    <dx-popup
+        class="popup"
+        [width]="300"
+        [height]="250"
+        [showTitle]="true"
+        title="{{ 'Popup delete text' | translate: lang }}"
+        [dragEnabled]="false"
+        [closeOnOutsideClick]="true"
+        [(visible)]="confirmDialogVisible">
+        <div *dxTemplate="let data of 'content'">
+            <p class="organization-name">{{ selectedValueName }}</p>
+            <hr class="popup-hr">
+            <div class="btn-panel popup-panel">
+                <div class="popup-accept">
+                    <dx-button
+                        icon="check"
+                        type="success"
+                        (onClick)="confirmAccept()">
+                    </dx-button>
+                </div>
+                <div class="popup-reject">
+                    <dx-button
+                        icon="remove"
+                        type="danger"
+                        (onClick)="confirmReject()">
+                    </dx-button>
+                </div>
+            </div>
+        </div>
+    </dx-popup>
+</div>

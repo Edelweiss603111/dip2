@@ -1,0 +1,17 @@
+<div *ngIf="item" class="menu-item" [ngClass]="{'opened': isOpened}">
+  <div class="menu-item-base" [ngClass]="{'parent': item.children.length !== 0, 'child': isChild, 'opened': isOpened}">
+    <!--<div class="menu-item-checkbox">-->
+    <!--<input type="checkbox" name="sub-group">-->
+    <!--</div>-->
+    <div class="arrow" (click)="toggleSubLevel()"><i class="fa fa-chevron-down" aria-hidden="true"></i> </div>
+    <div class="label">
+      {{item.label}}
+    </div>
+  </div>
+  <div class="marker"></div>
+  <div class="menu-item-children" [ngClass]="{'opened': isOpened}" *ngIf="item.children">
+    <lime-menu-item *ngFor="let subItem of item.children" [item]="subItem" [isChild]="true"
+                    [isOpened]="isOpened"></lime-menu-item>
+  </div>
+</div>
+

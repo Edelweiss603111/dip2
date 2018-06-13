@@ -10,13 +10,6 @@ namespace UnitTestDip
         [TestMethod]
         public void TestMethod1()
         {
-            ClassDip1 hello1 = new ClassDip1("Sveta");
-            Assert.AreEqual("Hello Sveta", hello1.Message);
-        }
-
-        [TestMethod]
-        public void TestMethod2()
-        {
             ClassDip1 hello1 = new ClassDip1("World");
             Assert.AreEqual("Hello Sveta", hello1.Message);
         }

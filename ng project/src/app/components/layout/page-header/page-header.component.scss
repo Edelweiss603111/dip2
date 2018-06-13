@@ -1,0 +1,64 @@
+@import "../../../styles/mixins";
+
+.content {
+  @include offSelection;
+  margin-bottom: 40px;
+
+  .header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px !important;
+
+
+    h2 {
+      margin-bottom: 0 !important;
+      margin-top: 0 !important;
+    }
+
+    .arrow {
+      margin-left: 10px;
+      padding-bottom: 5px;
+      font-size: 14pt;
+      transform-origin: center;
+      @include transition2(0.3s);
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  .page-describer {
+    @include offSelection();
+
+    text-align: center;
+    width: 100%;
+    //margin-top: 10px;
+
+    display: none;
+    visibility: hidden;
+
+    .page-description {
+      display: grid;
+      grid-template-columns: 50px 1fr;
+      grid-template-areas: "icon text";
+      grid-column-gap: 15px;
+      width: 80%;
+      line-height: 160%;
+      margin: 0 auto;
+
+      .text {
+        grid-area: text;
+        display: inline-block;
+        text-align: left;
+        font-size: 15px;
+      }
+
+      .logo {
+        grid-area: icon;
+        text-align: center;
+      }
+
+    }
+  }
+}

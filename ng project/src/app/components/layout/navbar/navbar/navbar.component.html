@@ -1,0 +1,23 @@
+<div #hamburger id="hamburger">
+    <!--
+    A fake / hidden checkbox is used as click reciever,
+    so you can use the :checked selector on it.
+    -->
+    <input #hamburgerCheckbox type="checkbox" (change)="toggle_navbar()"/>
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+
+<div #navbar class="navbar">
+  <div id="my-objects" class="flex" (click)="goToMyInstallations()">
+    <div id="my-objects-text"><h2>{{ 'My objects' | translate: lang }}</h2></div>
+    <div id="my-objects-amount"><h2 >{{objectsAmount | async}}</h2></div>
+  </div>
+
+  <div class="menu">
+    <lime-menu-item *ngFor="let item of menu" [item]="item" [isOpened]="item.label === pageTitle"></lime-menu-item>
+  </div>
+
+</div>
+

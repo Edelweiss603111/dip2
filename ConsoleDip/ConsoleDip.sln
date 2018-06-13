@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2003
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleDip", "ConsoleDip\ConsoleDip.csproj", "{E6108D1C-3C70-4EB9-92CF-895ED0B688E3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTestDip", "UnitTestDip\UnitTestDip.csproj", "{D923C128-9607-44F6-8404-1A308DB9C148}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibraryDIp", "ClassLibraryDIp\ClassLibraryDIp.csproj", "{9AC8DED8-7D9B-428C-9D4C-B1C3FA4DCCF3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,8 +23,15 @@ Global
 		{D923C128-9607-44F6-8404-1A308DB9C148}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D923C128-9607-44F6-8404-1A308DB9C148}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D923C128-9607-44F6-8404-1A308DB9C148}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9AC8DED8-7D9B-428C-9D4C-B1C3FA4DCCF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9AC8DED8-7D9B-428C-9D4C-B1C3FA4DCCF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9AC8DED8-7D9B-428C-9D4C-B1C3FA4DCCF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9AC8DED8-7D9B-428C-9D4C-B1C3FA4DCCF3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0264A5B3-FBD5-46DB-AC16-8C602D0473E2}
 	EndGlobalSection
 EndGlobal
