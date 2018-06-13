@@ -14,7 +14,7 @@ namespace ClassLibrary1
         [TestCase]
         public static void Test1()
         {
-            ClassDip1 hello1 = new ClassDip1("World");
+            ClassDip1 hello1 = new ClassDip1("Sveta");
             Assert.AreEqual("Hello Sveta", hello1.Message);
         }
 
