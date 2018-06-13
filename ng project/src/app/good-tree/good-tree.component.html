@@ -1,0 +1,55 @@
+<dx-tree-list
+        id="goodstree"
+        [dataSource]="goodsTree"
+        itemsExpr="items"
+        dataStructure="tree"
+        [showRowLines]="true"
+        [columnAutoWidth]="true"
+        [columnHidingEnabled]="true"
+        [showBorders]="true"
+        [(expandedRowKeys)]="expandRows">
+    <dxo-sorting mode="none"></dxo-sorting>
+    <dxo-search-panel [visible]="true"
+                placeholder="{{ 'Search for Good type trees responce data' | translate: lang }}"
+                width="93%">
+    </dxo-search-panel>
+    <dxo-header-filter [visible]="true"></dxo-header-filter>
+
+    <dxi-column dataField="Name" caption="{{ 'Name' | translate: lang }}" headerCellTemplate="NameHeaderTemplate">
+    </dxi-column>
+    <dxi-column dataField="CashdeskSell" caption="{{ 'Sell' | translate: lang }}" cellTemplate="listItemCashdeskSell">
+    </dxi-column>
+    <dxi-column dataField="IsFrequent" caption="{{ 'Frequent actions' | translate: lang }}" cellTemplate="listItemFrequently">
+    </dxi-column>
+    <dxi-column dataField="Hotkey" caption="{{ 'Hotkey' | translate: lang }}" cellTemplate="listItemHotkey"
+        [allowHeaderFiltering]="false" [allowSearch]="false" headerCellTemplate="CenterHeaderTemplate">
+    </dxi-column>
+    
+    <div *dxTemplate="let info of 'NameHeaderTemplate'">
+        <dx-button class="expand-btn"
+            [(text)]="btnText"
+            width = 18
+            height = 18
+            (onClick)="expandAll($event)"
+            [template]="'buttonTemplate'">
+            <span *dxTemplate="let buttonData of 'buttonTemplate'">
+                <i *ngIf="buttonData.text === '+'" style="position:relative; color:#959595; font-size: 23px; left:-18px; top:-5px;">+</i>
+                <i *ngIf="buttonData.text === '-'" style="position:relative; color:#959595; font-size: 34px; left:-17px; top:-1px;">-</i>
+            </span> 
+        </dx-button>
+        <span>{{ info.column.caption }}</span>
+    </div>
+    <div class="headerAlignCenter" *dxTemplate="let info of 'CenterHeaderTemplate'">
+        <span>{{ info.column.caption }}</span>
+    </div>
+    <div *dxTemplate="let itemData of 'listItemCashdeskSell'">
+        <dx-check-box *ngIf="itemData.data.CashdeskSell !== undefined" [value]="itemData.data.CashdeskSell"></dx-check-box>
+    </div>
+    <div *dxTemplate="let itemData of 'listItemFrequently'">
+        <dx-check-box *ngIf="itemData.data.IsFrequent !== undefined" [value]="itemData.data.IsFrequent"></dx-check-box>
+    </div>
+    <div *dxTemplate="let itemData of 'listItemHotkey'">
+        <dx-text-box *ngIf="itemData.data.Hotkey !== undefined" [value]="itemData.data.Hotkey" [showClearButton]="true"
+            class="hotkeyBox" height=23 [width]=textBoxWidth ></dx-text-box>
+    </div>
+</dx-tree-list>

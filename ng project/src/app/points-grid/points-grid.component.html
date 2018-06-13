@@ -1,0 +1,148 @@
+<!--<dx-data-grid #grid
+    id="gridContainer"
+    [dataSource]="gridDataSource"
+    [allowColumnResizing]="true"
+    [hoverStateEnabled]="true"
+    [selectedRowKeys]="[]"
+    [showColumnLines]="false"
+    [showRowLines]="false"
+    [columnAutoWidth]="true"
+    [showBorders]="true"
+    [columnHidingEnabled]="true"
+    [rowAlternationEnabled]="true">-->
+<!-- https://js.devexpress.com/Documentation/Guide/Widgets/DataGrid/Data_Binding/Custom_Sources/ -->
+
+<dx-data-grid #grid
+        id="gridContainer"
+        keyExpr="ID"
+        [dataSource]="points"
+        [allowColumnResizing]="true"
+        [hoverStateEnabled]="true"
+        [selectedRowKeys]="[]"
+        [showColumnLines]="false"
+        [showRowLines]="false"
+        [columnAutoWidth]="true"
+        [showBorders]="true"
+        [columnHidingEnabled]="true"
+        [rowAlternationEnabled]="true">
+    <dxo-selection mode="single"></dxo-selection>
+    <dxo-paging [pageSize]="10"></dxo-paging>
+    <dxo-search-panel [visible]="true" [width]="240"></dxo-search-panel>
+    <dxo-summary>
+        <dxi-total-item
+            column="Name"
+            summaryType="count"
+            displayFormat="{{ 'Grid summary text' | translate: lang }}">
+        </dxi-total-item>
+    </dxo-summary>
+    <dxo-pager 
+        [allowedPageSizes]="[5, 10, 20]"
+        [showPageSizeSelector]="true"
+        [showNavigationButtons]="true"></dxo-pager>
+
+    <!--<dxi-column dataField="OrderNumber"></dxi-column>
+    <dxi-column dataField="OrderDate"></dxi-column>
+    <dxi-column dataField="StoreCity"></dxi-column>
+    <dxi-column dataField="StoreState"></dxi-column>
+    <dxi-column dataField="Employee"></dxi-column>
+    <dxi-column dataField="SaleAmount" format="currency"></dxi-column>-->
+
+    <dxi-column
+        dataField="Name"
+        caption="{{ 'Name' | translate: lang }}"
+        headerCellTemplate="headerTemplate">
+    </dxi-column>
+    <dxi-column
+        dataField="Kind" [hidingPriority]="6"
+        [allowSearch]="false"
+        caption="{{ 'Type' | translate: lang }}">
+    </dxi-column>
+    <dxi-column
+        dataField="RegistrationTime"
+        [hidingPriority]="0"
+        type="date"
+        cellTemplate="dateTemplate"
+        caption="{{ 'Register time' | translate: lang }}">
+    </dxi-column>
+    <dxi-column
+        caption="{{ 'Authorized' | translate: lang }}"
+        [hidingPriority]="2"
+        cellTemplate="listItemAutorize">
+    </dxi-column>
+    <dxi-column
+        dataField="Type" [hidingPriority]="5"
+        [allowSearch]="false"
+        caption="{{ 'Controller type' | translate: lang }}">
+    </dxi-column>
+    <dxi-column
+        dataField="LastSettings"
+        cellTemplate="dateTemplate"
+        [hidingPriority]="4"
+        caption="{{ 'Last get settings time' | translate: lang }}">
+    </dxi-column>
+    <dxi-column
+        dataField="LastTariff"
+        [hidingPriority]="3"
+        cellTemplate="dateTemplate"
+        caption="{{ 'Last get tariff time' | translate: lang }}">
+    </dxi-column>
+    <dxi-column
+        caption="{{ 'Allow online check pass' | translate: lang }}"
+        [hidingPriority]="1"
+        cellTemplate="listItemOnlineCheck">
+    </dxi-column>
+
+    <div *dxTemplate="let columnHeader of 'headerTemplate'">
+        <p>{{ columnHeader.column.caption }}</p>
+    </div>
+    <div *dxTemplate="let columnData of 'dateTemplate'">
+        <p>{{ columnData.value | date: 'dd.MM.yyyy' }}</p>
+    </div>
+    <div class="checkboxAlign" *dxTemplate="let itemData of 'listItemAutorize'">
+        <dx-check-box [disabled]="true"
+            [value]="itemData.data.IsAuthorize"></dx-check-box>
+    </div>
+    <div class="checkboxAlign" *dxTemplate="let itemData of 'listItemOnlineCheck'">
+        <dx-check-box [disabled]="true" *ngIf="itemData.data.CheckOnline !== undefined" [value]="itemData.data.CheckOnline"></dx-check-box>
+    </div>
+</dx-data-grid>
+<div class="btn-block">
+    <div class="btn-panel add-panel">
+        <dx-button
+            icon="add"
+            text="Создать"
+            validationGroup="customerData"
+            [useSubmitBehavior]="true">
+        </dx-button>
+        <div class="btn-text btn-text-create">Создание новой точки обслуживания</div>
+    </div>
+    <div class="btn-panel edit-panel">
+        <dx-button
+            icon="edit"
+            text="Редактировать"
+            validationGroup="customerData"
+            [useSubmitBehavior]="true">
+        </dx-button>
+        <div class="btn-text btn-text-edit">Редактирование выбранной точки обслуживания.
+            Позволяет изменить тип точки обслуживания и сопутствующие ему параметры</div>
+    </div>
+    <div class="btn-panel settings-panel">
+        <dx-button
+            icon="preferences"
+            text="Настроить услуги"
+            validationGroup="customerData"
+            [useSubmitBehavior]="true">
+        </dx-button>
+        <div class="btn-text btn-text-settings">Выбор услуги, которая будет обслуживаться на данной точке.
+            К одной точке обслуживания может быть привязана только одна услуга!</div>
+    </div>
+    <div class="btn-panel delete-panel">
+        <dx-button
+            icon="trash"
+            text="Удалить"
+            validationGroup="customerData"
+            [useSubmitBehavior]="true">
+        </dx-button>
+        <div class="btn-text btn-text-delete">Удаление услуги. Операция необратима!</div>
+    </div>
+</div>

@@ -1,0 +1,142 @@
+<dx-form id="form"
+        [colCount]=colCount
+        [formData]="good">
+    <dxi-item dataField="Name"
+            editorType="dxAutocomplete"
+            [editorOptions]="{ width: '100%',
+                            dataSource: namesArray,
+                            placeholder: 'Name' | translate: lang }">
+        <dxo-label text="{{ 'Name' | translate: lang }}"></dxo-label>
+        <dxi-validation-rule
+            type="stringLength"
+            [min]="2"
+            [max]="50"
+            message="{{ 'Monday' | translate: lang }}">
+        </dxi-validation-rule>
+        <dxi-validation-rule type="required"></dxi-validation-rule>
+    </dxi-item>
+    <!-- https://js.devexpress.com/Documentation/ApiReference/UI_Widgets/dxValidator/Validation_Rules/ -->
+    <dxi-item class="item" dataField="RegistrationTime"
+            editorType="dxDateBox"
+            [editorOptions]="{ width: '100%',
+                                displayFormat: 'dd.MM.yyyy hh:mm',
+                                type:'datetime',
+                                disabled: false,
+                                adaptivityEnabled: true,
+                                pickerType: 'calendar',
+                                placeholder: 'Register time' | translate: lang }">
+        <dxo-label text="{{ 'Register time' | translate: lang }}"></dxo-label>
+        <dxi-validation-rule type="required" message="Position is required"></dxi-validation-rule>
+    </dxi-item>
+    <dxi-item dataField="IsAuthorize"
+            editorType="dxCheckBox" class="check-box">
+        <dxo-label text="{{ 'Authorize' | translate: lang }}"></dxo-label>
+    </dxi-item>
+    <dxi-item dataField="Kind"
+            editorType="dxLookup"
+            [editorOptions]="{ width: '100%',
+                        showPopupTitle: false,
+                        dataSource: kindsList,
+                        closeOnOutsideClick: true,
+                        placeholder: 'Kind' | translate: lang }">
+        <dxo-label text="{{ 'Kind' | translate: lang }}"></dxo-label>
+        <dxi-validation-rule type="required" message="Position is required"></dxi-validation-rule>
+    </dxi-item>
+    <dxi-item dataField="Type"
+            editorType="dxSelectBox"
+            [editorOptions]="{ width: '100%',
+                        items: typesList,
+                        placeholder: 'Controller type' | translate: lang }">
+        <dxo-label text="{{ 'Controller type' | translate: lang }}"></dxo-label>
+        <dxi-validation-rule type="required" message="Position is required"></dxi-validation-rule>
+    </dxi-item>
+    <dxi-item dataField="RenewalPeriodTime"
+            editorType="dxNumberBox"
+            [editorOptions]="{ width: '100%',
+                        showSpinButtons: true,
+                        max: '100',
+                        min: '0',
+                        format: '#0' }">
+        <dxo-label text="{{ 'Refresh time' | translate: lang }}"></dxo-label>
+        <dxi-validation-rule type="required" message="Position is required"></dxi-validation-rule>
+    </dxi-item>
+    <dxi-item dataField="TimeZone"
+            editorType="dxNumberBox"
+            [editorOptions]="{ width: '100%',
+                        showSpinButtons: true,
+                        max: '24',
+                        min: '0',
+                        format: '#0' }">
+        <dxo-label text="{{ 'Time zone' | translate: lang }}"></dxo-label>
+    </dxi-item>
+    <dxi-item dataField="CheckOnline"
+            editorType="dxCheckBox" class="check-box">
+        <dxo-label text="{{ 'CheckOnline' | translate: lang }}"></dxo-label>
+    </dxi-item>
+    <dxi-item dataField="LastSettings" editorType="dxDateBox" format="dd.MM.yyyy"
+            [editorOptions]="{ width: '100%',
+                            displayFormat: 'dd.MM.yyyy',
+                            disabled: true,
+                            adaptivityEnabled: true,
+                            pickerType: 'calendar',
+                            placeholder: 'Last get settings time' | translate: lang }">
+        <dxo-label text="{{ 'Last get settings time' | translate: lang }}"></dxo-label>
+    </dxi-item>
+    <dxi-item dataField="LastTariff" editorType="dxDateBox" 
+            [editorOptions]="{ width: '100%',
+                            displayFormat: 'dd.MM.yyyy',
+                            disabled: true,
+                            adaptivityEnabled: true,
+                            pickerType: 'calendar',
+                            placeholder: 'Last get tariff time' | translate: lang }">
+        <dxo-label text="{{ 'Last get tariff time' | translate: lang }}"></dxo-label>
+    </dxi-item>
+    <dxi-item dataField="LastCommonLogs" editorType="dxDateBox" 
+            [editorOptions]="{ width: '100%',
+                            displayFormat: 'dd.MM.yyyy',
+                            disabled: true,
+                            adaptivityEnabled: true,
+                            pickerType: 'calendar',
+                            placeholder: 'Last upload general log time' | translate: lang }">
+        <dxo-label text="{{ 'Last upload general log time' | translate: lang }}"></dxo-label>
+    </dxi-item>
+    <dxi-item dataField="LastUnloadPass" editorType="dxDateBox" 
+            [editorOptions]="{ width: '100%',
+                            displayFormat: 'dd.MM.yyyy',
+                            disabled: true,
+                            adaptivityEnabled: true,
+                            pickerType: 'calendar',
+                            placeholder: 'Last upload pass log time' | translate: lang }">
+        <dxo-label text="{{ 'Last upload pass log time' | translate: lang }}"></dxo-label>
+    </dxi-item>
+    <dxi-item dataField="LastUnloadTransaction" editorType="dxDateBox" 
+            [editorOptions]="{ width: '100%',
+                            displayFormat: 'dd.MM.yyyy',
+                            disabled: true,
+                            adaptivityEnabled: true,
+                            pickerType: 'calendar',
+                            placeholder: 'Last upload transaction log time' | translate: lang }">
+        <dxo-label  text="{{ 'Last upload transaction log time' | translate: lang }}" class="item-label"></dxo-label>
+    </dxi-item>
+</dx-form>
+<div class="btn-block">
+    <div class="btn-panel">
+        <dx-button
+            icon="check"
+            text="Сохранить"
+            validationGroup="customerData"
+            [useSubmitBehavior]="true">
+        </dx-button>
+        <div class="btn-text btn-text-save">Сохранить внесенные изменения и вернуться к списку точек обслуживания</div>
+    </div>
+    <div class="btn-panel">
+        <dx-button
+            icon="clear"
+            text="Отмена"
+            validationGroup="customerData"
+            [useSubmitBehavior]="true">
+        </dx-button>
+        <div class="btn-text btn-text-cancel">Отменить изменения и вернуться к списку точек обслуживания</div>
+    </div>
+</div>
+<hr>

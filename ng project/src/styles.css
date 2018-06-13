@@ -1,0 +1,51 @@
+/* You can add global styles to this file, and also import other style files */
+
+.rightBtns {
+    float: right;
+    margin-left: 3px;
+    margin-right: 5px;
+}
+.leftBtns {
+    margin-left: 5px;
+}
+.dx-selection > td,
+.dx-page-size.dx-selection,
+.dx-page.dx-selection {
+    background-color: rgb(138, 196, 63) !important;
+}
+.dx-checkbox-icon {
+    color: rgb(138, 196, 63) !important;
+}
+.dx-field-item-required-mark {
+    font-size: 25px;
+    color: rgb(138, 196, 63);
+}
+.dx-form .dx-field-item-label {
+    white-space: normal !important;
+}
+.dx-form .dx-field-item-label-content {
+    width: 220px !important;
+}
+
+.dx-item {
+    margin-bottom: 5px;
+}
+
+/*.dx-datagrid-action.dx-cell-focus-disabled {
+    text-align: center !important;
+    border-right: 1px solid;
+}*/
+
+/*.dx-texteditor-container input[type=text] {
+    text-align: center;
+}*/
+
+.dx-button.dx-state-focused {
+    background-color: #fff;
+}
+
+@media (max-width: 600px) {
+    .dx-layout-manager .dx-label-h-align.dx-flex-layout {
+        display: block !important;
+    }
+}

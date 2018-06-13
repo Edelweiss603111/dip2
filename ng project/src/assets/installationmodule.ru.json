@@ -1,0 +1,265 @@
+﻿{
+	"Select day type": "Выберите тип дня",
+
+	"Installation": "Инсталляция",
+	"Installations": "Инсталляции",
+	"Installation id": "Инсталляция",
+
+	"Installation users and rights": "Пользователи инсталляций",
+	"Installation users responce data": "Пользователи инсталляций",
+	"Users": "Пользователи",
+	"User id": "Пользователь",
+	"Is installation owner": "Управляющий инсталляцией",
+	"Is installation administrator": "Администратор инсталляции",
+	"Is head cashier": "Главный кассир",
+	"Is cashier": "Кассир",
+	"Cashier code": "Код кассира",
+
+	"Processings": "Процессинги",
+	"Processing": "Процессинги",
+	"Processings responce data": "Процессинги",
+	"Acquirer": "Эквайер",
+	"Is changeble": "Сдача",
+	"Payment type": "Способ оплаты",
+	"Cashdesk acquiring driver id": "Протокол кассового эквайринга",
+	"Printer currency id": "Номер валюты принтера",
+	"Processing mode": "Режим",
+	"Can return": "Возможен возврат",
+
+	"Cashdesks": "Кассы",
+	"Cashdesks responce data": "Кассы",
+	"Goods": "Товары",
+	"Printers": "Принтеры",
+	"Edit goods for cashdesk": "Выберите товары, которые будут продаваться на этой кассе",
+	"Cashdesk printers responce data": "Принтеры",
+	"Printer number": "Номер принтера",
+	"Inn": "ИНН",
+	"Registration number": "Регистрационный номер",
+	"Baud rate": "Скорость",
+	"Connection": "Соединение",
+	"Driver": "Драйвер",
+	"Atol": "АТОЛ",
+	"Virtual": "Виртуальный принтер",
+	"Model": "Модель принтера",
+	"Port number": "Номер порта",
+	"Cashdesk id": "Касса",
+
+	"Organizations": "Организации",
+	"Organizations responce data": "Организации",
+	"Organization id": "Организация",
+	"Description": "Описание",
+
+	"Organization users and rights": "Пользователи организаций",
+	"OrganizationUsers": "Пользователи организаций",
+	"Organization users responce data": "Пользователи организаций",
+	"Is organization owner": "Владелец организации",
+
+	"Good categories": "Категории товаров",
+	"GoodTypeTrees": "Категории товаров",
+	"Good type trees responce data": "Категории товаров",
+	"Parent id": "Родительская категория",
+
+	"Time limitation patterns": "Временные ограничения",
+	"Time limitations responce data": "Временные ограничения",
+	"TimeLimitations": "Временные ограничения",
+	"Period": "Период",
+	"Type": "Тип",
+	"Day rounding type": "Округление дня",
+	"Week rounding type": "Округление недели",
+	"Mounth rounding type": "Округление месяца",
+
+	"GoodTypes": "Товары",
+	"Good types responce data": "Товары",
+	"Kind": "Тип",
+	"Is writable": "Записывать на карту",
+	"Good type tree id": "Категория товаров",
+	"Base price": "Базовая цена",
+	"Default amount": "Количество по умолчанию",
+	"Time limitation id": "Временное ограничение",
+	"Order": "Приоритет списания на турникете",
+	"Allow return": "Разрешить возврат товара",
+	"Delay": "Задержка между проходами (для одной карты/билета)",
+	"Check last pass": "Проверять последний проход",
+	"Vat": "НДС",
+
+
+	"DayTypes": "Типы дня",
+	"DayType": "Типы дня",
+	"Day types responce data": "Типы дня",
+
+	"Tariffs": "Тарифы",
+	"Tariff": "Тарифы",
+	"Tariffs responce data": "Тарифы",
+	"Validity date from": "Дата начала действия",
+	"Validity date to": "Дата конца действия",
+	"Time from": "Время начала действия",
+	"Time to": "Время конца действия",
+	"Day of week": "День недели",
+	"Day type id": "Тип дня",
+	"Good type id": "Товар",
+	"Price type": "Изменение цены",
+	"Price value": "Модификатор цены",
+
+	"DiscountTypes": "Типы скидок",
+	"DiscountType": "Типы скидок",
+	"Discount types responce data": "Типы скидок",
+	"Is percent": "Процентная",
+	"Summable": "Суммирующаяся",
+	"Amount": "Величина",
+
+
+	"Calendar": "Календарь",
+	"Calendar id": "Календарь",
+	"Calendars": "Календари",
+	"Calendars responce data": "Список календарей",
+
+	"Default day type id": "Тип дня по умолчанию",
+
+	"Service points": "Точки обслуживания",
+	"ServicePoint": "Точки обслуживания",
+
+	"Services": "Услуги",
+	"Service": "Услуги",
+
+	"Revaluation type": "Тип пересчета стоимости при возврате",
+	"Card emission type": "Тип эмиссии карты",
+
+	"Right type id": "Тип оплаты",
+	"From": "Действует с",
+	"To": "Действует по",
+
+	"Register time": "Время регистрации",
+
+	"Authorized": "Авторизован",
+	"Controller type": "Тип контроллера",
+	"Time zone": "Временная зона",
+	"Last get settings time": "Последнее получение настроек",
+	"Last get tariff time": "Последнее получение тарифов",
+	"Last upload general log time": "Последняя загрузка на сервер общего лога",
+	"Last upload pass log time": "Последняя загрузка на сервер лога проходов",
+	"Last upload transaction log time": "Последняя загрузка на сервер лога транзакций",
+
+	"Rfid reader port": "COM-порт считывателя",
+
+	"Creation time": "Дата создания инсталляции",
+
+	"Refresh time": "Период обновления (минуты)",
+
+	"Date from": "Дата начала действия",
+
+	"Date to": "Дата конца действия",
+
+	"Deny qr code": "Запрет прохода по QR-коду",
+
+	"Manage your installations": "Управление инсталляциями",
+
+	"Installations responce data": "Настройте ваши инсталляции",
+
+	"Installation user is installation owner": "Управляющий инсталляцией",
+
+	"Installation user is installation administrator": "Администратор инсталляции",
+
+	"Search for Installations responce data": "Поиск инсталляции",
+
+	"Search for Installation users responce data": "Поиск пользователя",
+
+	"Search for Cashdesks responce data": "Поиск кассы",
+
+	"Search for Organizations responce data": "Поиск организации",
+
+	"Search for Processings responce data": "Поиск процессингов",
+
+	"Search for Organization users responce data": "Поиск пользователя организации",
+
+	"Search for Good type trees responce data": "Поиск категории товаров",
+
+	"Search for Time limitations responce data": "Поиск временных ограничений",
+
+	"Search for Good types responce data": "Поиск товара",
+
+	"Search for Calendars responce data": "Поиск календаря",
+
+	"Search for Day types responce data": "Поиск типа дня",
+
+	"Search for Tariffs responce data": "Поиск тарифа",
+
+	"Search for Discount types responce data": "Поиск типа скидок",
+
+	"Search for Service points responce data": "Поиск точки обслуживания",
+
+	"Search for Services responce data": "Поиск услуги",
+
+	"OnlineTariffs": "Онлайн тарифы",
+
+	"Online tariffs": "Онлайн тарифы",
+
+	"User name": "Имя пользователя",
+
+	"Installation name": "Название инсталляции",
+
+	"Add": "Редактирование",
+
+	"Good type name": "Товар",
+
+	"Organization name": "Название организации",
+
+	"Good type tree name": "Категория",
+
+	"Time limitation name": "Временные ограничения",
+
+	"Day type name": "Тип дня по умолчанию",
+
+	"Calendar name": "Календарь",
+
+	"Service points responce data": "Точки обслуживания",
+
+	"Services responce data": "Услуги",
+
+	"Allow online check pass": "Разрешить проверку прохода онлайн",
+
+	"Organization": "Организация",
+
+	"Print QR-code": "Разрешена печать QR-кодов",
+
+	"Edit services for service point": "Настройте услугу для точки обслуживания",
+
+	"Expand all": "Развернуть все",
+
+	"Collapse all": "Свернуть все",
+
+	"Clear": "Очистить",
+
+	"Choose goods for discount": "Настройте товары для выбранной скидки",
+
+	"Discount Amount": "Размер скидки",
+
+	"Hotkey": "Горячая клавиша",
+
+	"Frequent actions": "Частые действия",
+
+	"Sell": "Продавать на кассе",
+
+	"Error chance": "Процент ошибок",
+
+	"Print checks": "Печать фискальных чеков",
+
+	"Print slips": "Печать слипов",
+
+	"Print tickets": "Печать QR-кодов",
+
+	"Tariff modifiers (online only)": "Модификаторы тарифов (только для онлайна)",
+
+	"Service name": "Название услуги",
+
+	"Service tariff modifiers responce data": "Модификаторы тарифов для услуги",
+
+	"ServiceTariffModifiers": "Модификаторы тарифов для услуги",
+
+	"Search for Service tariff modifiers responce data":  "Поиск модификатора тарифа",
+
+	"Grid summary text": "Всего: {0} записей",
+	"Authorize": "Авторизация",
+	"CheckOnline": "Проверка прохода онлайн"
+
+
+}

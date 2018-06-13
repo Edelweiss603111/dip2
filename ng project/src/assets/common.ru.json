@@ -1,0 +1,82 @@
+﻿{
+	"Data saved": "Данные сохранены",
+	"Your changes successfully saved": "Ваши изменения были успешно сохранены",
+	"Data updated": "Данные обновлены",
+	"Data update failed": "Не получилось обновить данные",
+	"Server responce": "Ответ от сервера",
+	"Not selected": "Выберите запись",
+	"d": "д",
+	"h": "ч",
+	"m": "м",
+
+	"Monday": "Понедельник",
+	"Tuesday": "Вторник",
+	"Wednesday": "Среда",
+	"Thursday": "Четверг",
+	"Friday": "Пятница",
+	"Saturday": "Суббота",
+	"Sunday": "Воскресенье",
+
+	"Mon": "Пн",
+	"Tue": "Вт",
+	"Wed": "Ср",
+	"Thu": "Чт",
+	"Fri": "Пт",
+	"Sat": "Сб",
+	"Sun": "Вс",
+
+	"Mo": "Пн",
+	"Tu": "Вт",
+	"We": "Ср",
+	"Th": "Чт",
+	"Fr": "Пт",
+	"Sa": "Сб",
+	"Su": "Вс",
+
+	"calendarM": "Пн",
+
+	"January": "Январь",
+	"February": "Февраль",
+	"March": "Март",
+	"April": "Апрель",
+	"May": "Май",
+	"June": "Июнь",
+	"July": "Июль",
+	"August": "Август",
+	"September": "Сентябрь",
+	"October": "Октябрь",
+	"November": "Ноябрь",
+	"December": "Декабрь",
+
+	"Jan": "Янв",
+	"Feb": "Фев",
+	"Mar": "Март",
+	"Apr": "Апр",
+
+	"Jun": "Июнь",
+	"Jul": "Июль",
+	"Aug": "Авг",
+	"Sep": "Сен",
+	"Oct": "Окт",
+	"Nov": "Ноя",
+	"Dec": "Дек",
+
+	"calendarLocale:firstDayOfWeek": "1",
+	"calendarLocale:dateFormat": "dd.mm.yy",
+
+	"Today": "Сегодня",
+	"Clear": "Очистить",
+
+	"Name": "Название",
+	"Type": "Тип",
+	"required": "обязательное",
+
+	"Table is empty, you can add new records":  "Нет записей, но вы можете добавить новые",
+	"You do not have access to any existing installation... You can create your own one!":  "У вас нет доступа ни к одной инсталляуции... Но вы можете создать свою",
+	"Create some new cashdesks to start sales" : "Создайте кассу что бы начать продавать",
+	"Create new organization to start sales": "Создайте организацию что бы начать продавать",
+	"Add new good categories":  "Добавьте категории товаров",
+	"Create time limitation patterns for tickets" :  "Создайте шаблон временного ограничения для билетов",
+	"Add new goods to sell" : "Добавьте товары на продажу" 
+
+}

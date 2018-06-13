@@ -1,0 +1,62 @@
+#gridContainer {
+    margin: 20px 30px;
+}
+.btn-block {
+    margin: 25px 30px 0 30px;
+    text-align: center;
+}
+.btn-panel {
+    display: inline-block;
+}
+.btn-panel .dx-button-text {
+    font-size: 18px;
+}
+.btn-text {
+    font-style: italic;
+    font-size: 14px;
+    margin: 10px;
+}
+.btn-text-create {
+    width: 230px;
+}
+.btn-text-edit {
+    width: 300px;
+}
+.btn-text-settings {
+    width: 282px;
+}
+.btn-text-delete {
+    width: 161px;
+}
+.add-panel{
+    top: -32px;
+    left: -111px;
+    position: relative;
+}
+.edit-panel{
+    left: -50px;
+    position: relative;
+}
+.settings-panel{
+    left: 17px;
+    position: relative;
+}
+.delete-panel{
+    left: 75px;
+    top: -16px;
+    position: relative;
+}
+/*.checkboxAlign {
+    text-align: center;
+}*/
+
+@media (max-width: 600px) {
+    .add-panel, .edit-panel, .settings-panel, .delete-panel{
+        top: 10px;
+        left: 0;
+        margin-bottom: 13px;
+    }
+    .btn-block {
+        margin: 0;
+    }
+}

@@ -1,0 +1,17 @@
+﻿{
+	"Home": "Обо мне",
+	"Login": "Информация для входа",
+	"My organizations": "Мои компании",
+	"My clusters": "Мои группы компаний",
+	"Enter your name": "Введите своё имя",
+	"User data patronomic": "Отчество",
+	"Name": "Имя",
+	"Email": "Email",
+	"Email confirmed": "Email подтвержден",
+	"Phone number": "Номер телефона",
+	"Phone number confirmed": "Номер телефона подтвержден",
+	"Surname": "Фамилия",
+	"Patronomic": "Отчетство",
+	"Display name": "Отображаемое имя",
+	"Culture": "Язык"
+}

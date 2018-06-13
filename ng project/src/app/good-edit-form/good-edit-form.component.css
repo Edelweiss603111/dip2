@@ -1,0 +1,43 @@
+#form {
+    margin: 20px 50px;
+}
+.check-box {
+    float: right;
+}
+.btn-block {
+    margin-top: 25px;
+    text-align: center;
+}
+.btn-panel {
+    display: inline-block;
+    margin-left: 45px;
+    margin-right: 35px;
+}
+.btn-panel .dx-button-text {
+    font-size: 18px;
+}
+.btn-text {
+    font-style: italic;
+    font-size: 14px;
+    margin: 10px;
+}
+.btn-text-save {
+    width: 280px;
+}
+.btn-text-cancel {
+    width: 210px;
+}
+hr {
+    margin: 30px 100px;
+    opacity: 0.4;
+}
+
+@media (max-width: 600px) {
+    .btn-panel {
+        margin-left: 0;
+        margin-right: 0;
+    }
+    hr {
+        margin: 30px;
+    }
+}

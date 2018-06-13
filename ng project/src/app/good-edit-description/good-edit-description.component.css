@@ -1,0 +1,28 @@
+.description-block {
+    margin: 20px 50px;
+    font-size: 14px;
+}
+.field {
+    margin: 25px 0;
+}
+.description-name, 
+.description-text {
+    display: inline-block;
+}
+.description-name {
+    font-weight: bold;
+    width: 220px;
+}
+.limitation {
+    color: rgb(138, 196, 63);
+}
+.description-text {
+    width: 80%;
+}
+.types-list li {
+    list-style-type: none;
+}
+.types-list li:before {
+    content: "*";
+    margin-right: 5px;
+}

@@ -1,82 +1,106 @@
-import {ErrorHandler, NgModule} from '@angular/core';
-import {BrowserModule, Title} from '@angular/platform-browser';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
-import {FormsModule} from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { DxDataGridModule,
+    DxCheckBoxModule,
+    DxButtonModule,
+    DxLookupModule,
+    DxSelectBoxModule,
+    DxTextAreaModule,
+    DxFormModule,
+    DxFormComponent,
+    DxNumberBoxModule,
+    DxDateBoxModule,
+    DxTreeListModule,
+    DxTextBoxModule } from 'devextreme-angular';
+import { L10nConfig, L10nLoader, TranslationModule, ProviderType } from 'angular-l10n';
+import 'devextreme-intl';
+import * as ru from '../assets/ru.json';
+import * as de from 'devextreme/localization/messages/de.json';
+import { locale, loadMessages } from 'devextreme/localization';
+import config from 'devextreme/core/config';
 
-import {AppRoutingModule} from './app-routing.module';
-import {GlobalModule} from './components/global/global.module';
 
-import {AuthInterceptor} from './services/auth/auth.interceptor';
-import {AuthGuard} from './services/auth/auth.guard';
-import {AccountClient, API_BASE_URL, ColumnTooltipClient, InstallationsClient} from '../../api';
 
-import {AppComponent} from './app.component';
-import {AuthService} from './services/auth/auth.service';
-
-import {L10nConfig, L10nLoader, TranslationModule, StorageStrategy, ProviderType, TranslatePipe} from 'angular-l10n';
-import {HttpErrorRequestInterceptor} from './services/http-error-request.interceptor';
-import {LayoutModule} from './components/layout/layout.module';
-
+import { AppComponent } from './app.component';
+import { Http, HttpModule, URLSearchParams } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
+import { GoodEditComponent } from './good-edit/good-edit.component';
+import { GoodEditFormComponent } from './good-edit-form/good-edit-form.component';
+import { GoodEditHeaderComponent } from './good-edit-header/good-edit-header.component';
+import { GoodEditDescriptionComponent } from './good-edit-description/good-edit-description.component';
+import { PointsGridComponent } from './points-grid/points-grid.component';
+import { GoodTreeComponent } from './good-tree/good-tree.component';
 
 const l10nConfig: L10nConfig = {
   locale: {
-    languages: [
-      { code: 'en', dir: 'ltr' },
-      { code: 'ru', dir: 'ltr' }
-    ],
-    language: 'en',
-    storage: StorageStrategy.Cookie
+      languages: [
+          { code: 'en', dir: 'ltr' },
+          { code: 'ru', dir: 'ltr' }
+      ],
+      language: 'en'
   },
   translation: {
-    providers: [
-      { type: ProviderType.Static, prefix: './assets/localization/locale-' }
-    ],
-    caching: true,
-    missingValue: 'No key'
+      providers: [
+        { type: ProviderType.Static, prefix: './assets/installationmodule.' },
+        { type: ProviderType.Static, prefix: './assets/accountmodule.' },
+        { type: ProviderType.Static, prefix: './assets/common.' },
+        { type: ProviderType.Static, prefix: './assets/systemmodule.' }
+      ],
+      missingValue: 'No key'
   }
 };
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
   imports: [
-    BrowserAnimationsModule,
-    BrowserModule,
-    FormsModule,
-    HttpClientModule,
-    GlobalModule,
-    LayoutModule,
-    TranslationModule.forRoot(l10nConfig),
-    AppRoutingModule // should be the last!!! The router accepts the first route that matches a navigation request path.
+      BrowserModule,
+      DxDataGridModule,
+      HttpClientModule,
+      DxCheckBoxModule,
+      DxButtonModule,
+      DxSelectBoxModule,
+      DxTextAreaModule,
+      DxFormModule,
+      DxNumberBoxModule,
+      DxDateBoxModule,
+      DxTreeListModule,
+      DxTextBoxModule,
+      DxLookupModule,
+      HttpModule,
+      TranslationModule.forRoot(l10nConfig)
   ],
-  providers: [
-    AuthService,
-    AuthGuard,
-    Title,
-    InstallationsClient,
-    AccountClient,
-    ColumnTooltipClient,
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: AuthInterceptor,
-      multi: true
-    },
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: HttpErrorRequestInterceptor,
-      multi: true
-    },
-    {
-      provide: API_BASE_URL,
-      useValue: 'https://localhost:44342'
-    }
-  ],
+  declarations: [
+      AppComponent,
+      GoodEditComponent,
+      GoodEditFormComponent,
+      GoodEditHeaderComponent,
+      GoodEditDescriptionComponent,
+      PointsGridComponent,
+      GoodTreeComponent],
   bootstrap: [AppComponent]
 })
+
 export class AppModule {
+  localeStr: string;
+
   constructor(public l10nLoader: L10nLoader) {
     this.l10nLoader.load();
+    this.localeStr = this.getLocale();  
+    this.initGlobalize();
+    locale(this.localeStr);
   }
+
+  initGlobalize() {
+    loadMessages(de);
+    loadMessages(ru);
+  }
+
+  getLocale() {
+      var locale = sessionStorage.getItem("locale");
+      return locale != null ? locale : "ru";
+  }
+
+  setLocale(locale) {
+      sessionStorage.setItem("locale", locale);
+  }
+
 }
