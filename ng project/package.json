@@ -9,7 +9,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "scsslint" : "sass-lint -c sass-lint.yml src/**/*.scss -v -q"
+    "scsslint" : "sass-lint -c src/sass-lint.yml src/**/*.scss -v -q"
   },
   "private": true,
   "dependencies": {
