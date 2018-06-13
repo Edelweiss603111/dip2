@@ -37,7 +37,7 @@ rules:
     -
       style: uppercase
   indentation:
-    - 2
+    - 4
     -
       size: 4
   property-sort-order:
