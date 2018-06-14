@@ -10,7 +10,7 @@
     "lint": "ng lint",
     "e2e": "ng e2e",
     "scsslint": "sass-lint -c src/sass-lint.yml src/**/*.scss -v -q",
-    "htmllint": "htmllint **/*.html"
+    "htmllint": "htmllint src/**/*.html"
   },
   "private": true,
   "dependencies": {
