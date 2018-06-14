@@ -25,5 +25,11 @@ namespace ConsoleDip
             get { return "Hello " + _someName; }
             set { _someName = value; }
         }
+
+        public string Message2
+        {
+            get { return "Hello " + _someName; }
+            set { _someName = value; }
+        }
     }
 }
